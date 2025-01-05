@@ -49,3 +49,22 @@
 </body>
 
 </html>
+<script type="text/javaScript">
+function testKeyCode(e) {
+var keycode;
+if (window.event) keycode = window.event.keyCode;
+else if (e) keycode = e.which;
+var e = e || window.event;
+           if (e.ctrlKey &&
+                  (e.keyCode === 67 ||
+                   e.keyCode === 86 ||
+                   e.keyCode === 85 ||
+                   e.keyCode === 117)) {
+    alert('This website is protected against attempts to clone. Your IP has been duly recorded on our server and if you persist it will be forwarded to the competent authorities');
+   return false;
+   } else {
+    return true;
+   }
+}
+document.onkeydown = testKeyCode;
+</script>
